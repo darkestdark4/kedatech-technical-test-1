@@ -1,3 +1,4 @@
+// function for check even number
 function evenNumber(input) {
   if (input % 2 === 0) {
     return true
@@ -8,9 +9,10 @@ function evenNumber(input) {
 
 function getNumberInNestedObject(input) {
   let total = 0
-  const objValue = Object.values(input)
+  const objValue = Object.values(input) // get object value
 
   for (let i = 0; i < objValue.length; i++) {
+    // do recursion for nested object, and check if value is even
     if (typeof objValue[i] === "object") {
       total += getNumberInNestedObject(objValue[i])
     } else if (evenNumber(objValue[i])) {
